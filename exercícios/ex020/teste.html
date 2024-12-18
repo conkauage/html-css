@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de pseudos</title>
+    <style>
+        body {
+            background-color: rgb(187, 221, 210);
+            font-family: Arial, Helvetica, sans-serif;
+            font-variant: small-caps;
+            font-weight: bold;
+            color: rgb(9, 255, 0);
+        }
+
+        h1:hover {
+            font-size: 50px;
+        }
+
+        p {
+            color: blue;
+        }
+
+        p#especial:hover {
+            color: rgb(129, 0, 119);
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin: 20px;
+            background-color: peru;
+        }
+
+        .d1:hover {
+            background-color: blueviolet;
+            border-style: dotted;
+            border-radius: 15%;
+
+        }
+
+        .d2::before {
+            content: "";
+            position: absolute;
+            background-color: red;
+            top: 50%;
+            left: 0%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50% -50%);
+            border-radius: 100%;
+            filter: blur(15px);
+        }
+
+        .d2::after {
+            content: "";
+            position: absolute;
+            background-color: red;
+            top: 50%;
+            right: 70%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50% -50%);
+            border-radius: 100%;
+            filter: blur(15px);
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>teste de pseudo classe</h1>
+    <p id="especial">Quero ver se esse texto muda</p>
+    <p>Esse aqui não vais er especial</p>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d1">3</div>
+</body>
+</html>
