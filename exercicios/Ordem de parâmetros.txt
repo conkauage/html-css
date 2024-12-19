@@ -1,0 +1,39 @@
+Na escrita de CSS, não há uma regra obrigatória sobre a ordem dos estilos. No entanto, existe uma boa prática amplamente adotada que ajuda na organização e legibilidade do código. Essa prática é conhecida como ordem lógica ou de agrupamento por categoria.
+
+Ordem sugerida (prática recomendada)
+Estilos de layout: Propriedades que afetam o posicionamento e o comportamento do elemento no layout da página.
+
+display
+position
+top, right, bottom, left
+z-index
+float
+clear
+Espaçamento: Propriedades que afetam o espaço em torno e dentro do elemento.
+
+margin
+padding
+Tamanho: Propriedades que definem as dimensões do elemento.
+
+width
+height
+max-width
+max-height
+min-width
+min-height
+Estilos visuais: Propriedades que definem a aparência do elemento.
+
+background, background-color, background-image
+border, border-radius
+box-shadow
+Texto e fontes: Propriedades relacionadas à tipografia.
+
+color
+font, font-size, font-weight
+text-align, text-transform, letter-spacing, line-height
+white-space, word-wrap
+Outras propriedades específicas do elemento: Propriedades que não se encaixam nos grupos acima.
+
+cursor
+visibility
+transition
