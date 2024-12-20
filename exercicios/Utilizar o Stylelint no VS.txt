@@ -1,0 +1,362 @@
+Entendi, Conrado. Vamos esclarecer e simplificar o uso do Stylelint em conjunto com o Prettier para que você possa aplicar facilmente a ordenação de propriedades CSS em novos projetos.
+
+1. Entendendo a Relação entre Prettier e Stylelint
+Prettier: Ferramenta de formatação de código que cuida da aparência do seu código (indentação, quebras de linha, aspas, etc.).
+Stylelint: Ferramenta de linting para CSS que ajuda a manter a consistência e qualidade do código, incluindo a ordenação de propriedades com plugins como stylelint-order.
+Ambas as ferramentas são complementares:
+
+Prettier formata o código.
+Stylelint aplica regras específicas de estilo e ordenação.
+2. Configurando Stylelint com stylelint-order em Novos Projetos
+Para aplicar a ordenação de propriedades CSS usando Stylelint em um novo projeto, siga os passos abaixo:
+
+Passo 1: Inicializar um Novo Projeto NPM
+Crie e navegue até o diretório do novo projeto:
+
+powershell
+Copiar código
+mkdir meu-novo-projeto
+cd meu-novo-projeto
+Inicialize o projeto com um package.json padrão:
+
+powershell
+Copiar código
+npm init -y
+Passo 2: Instalar as Dependências Necessárias
+Instale o Stylelint e o plugin stylelint-order como dependências de desenvolvimento:
+
+powershell
+Copiar código
+npm install --save-dev stylelint stylelint-order
+Passo 3: Configurar o Stylelint
+Crie um arquivo de configuração .stylelintrc.json na raiz do projeto com o seguinte conteúdo:
+
+json
+Copiar código
+{
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        "display",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "margin",
+        "padding",
+        "width",
+        "height",
+        "max-width",
+        "max-height",
+        "min-width",
+        "min-height",
+        "font",
+        "font-size",
+        "font-weight",
+        "font-family",
+        "line-height",
+        "text-align",
+        "color",
+        "background",
+        "background-color",
+        "background-image",
+        "background-size",
+        "background-position",
+        "border",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "box-shadow",
+        "opacity",
+        "transition",
+        "transform",
+        "*" 
+      ]
+    ],
+    "order/properties-alphabetical-order": null
+  }
+}
+Explicações:
+
+plugins: Inclui o stylelint-order para ordenar propriedades.
+rules:
+order/properties-order: Define a ordem específica das propriedades CSS.
+order/properties-alphabetical-order: Desativa a ordenação alfabética para permitir a ordem personalizada definida acima.
+Passo 4: Adicionar Scripts no package.json
+Para facilitar a execução do Stylelint, adicione os seguintes scripts no seu package.json:
+
+json
+Copiar código
+"scripts": {
+  "lint:css": "stylelint \"**/*.css\" --fix",
+  "format": "prettier --write \"**/*.{css,html,js}\""
+}
+Nota: Se você também estiver usando o Prettier, certifique-se de que ele está configurado corretamente.
+
+Passo 5: Executar o Stylelint
+Para aplicar as regras de ordenação e corrigir automaticamente onde possível, execute:
+
+powershell
+Copiar código
+npm run lint:css
+Passo 6: Verificar o Resultado
+Abra seu arquivo CSS (por exemplo, style.css) e verifique se as propriedades estão ordenadas conforme a configuração.
+
+Antes:
+
+css
+Copiar código
+.element {
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  margin: 10px;
+}
+Depois:
+
+css
+Copiar código
+.element {
+  display: flex;
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+3. (Opcional) Integrar Prettier com Stylelint
+Para garantir que o Prettier e o Stylelint trabalhem juntos sem conflitos:
+
+Instalar stylelint-config-prettier:
+
+Este pacote desativa regras do Stylelint que podem conflitar com o Prettier.
+
+powershell
+Copiar código
+npm install --save-dev stylelint-config-prettier
+Atualizar o .stylelintrc.json:
+
+Adicione a extensão stylelint-config-prettier:
+
+json
+Copiar código
+{
+  "extends": ["stylelint-config-prettier"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        "display",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "margin",
+        "padding",
+        "width",
+        "height",
+        "max-width",
+        "max-height",
+        "min-width",
+        "min-height",
+        "font",
+        "font-size",
+        "font-weight",
+        "font-family",
+        "line-height",
+        "text-align",
+        "color",
+        "background",
+        "background-color",
+        "background-image",
+        "background-size",
+        "background-position",
+        "border",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "box-shadow",
+        "opacity",
+        "transition",
+        "transform",
+        "*" 
+      ]
+    ],
+    "order/properties-alphabetical-order": null
+  }
+}
+Adicionar Script de Formatação com Prettier:
+
+No package.json, já incluímos o script "format". Execute-o para formatar arquivos com Prettier:
+
+powershell
+Copiar código
+npm run format
+4. Aplicar em Novos Projetos
+Para futuros projetos, basta seguir os passos abaixo:
+
+Inicializar o Projeto:
+
+powershell
+Copiar código
+mkdir meu-novo-projeto
+cd meu-novo-projeto
+npm init -y
+Instalar as Dependências:
+
+powershell
+Copiar código
+npm install --save-dev stylelint stylelint-order prettier stylelint-config-prettier prettier-plugin-css-order
+Configurar o Stylelint (.stylelintrc.json):
+
+json
+Copiar código
+{
+  "extends": ["stylelint-config-prettier"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        "display",
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+        "margin",
+        "padding",
+        "width",
+        "height",
+        "max-width",
+        "max-height",
+        "min-width",
+        "min-height",
+        "font",
+        "font-size",
+        "font-weight",
+        "font-family",
+        "line-height",
+        "text-align",
+        "color",
+        "background",
+        "background-color",
+        "background-image",
+        "background-size",
+        "background-position",
+        "border",
+        "border-width",
+        "border-style",
+        "border-color",
+        "border-radius",
+        "box-shadow",
+        "opacity",
+        "transition",
+        "transform",
+        "*" 
+      ]
+    ],
+    "order/properties-alphabetical-order": null
+  }
+}
+Configurar o Prettier (.prettierrc):
+
+Crie um arquivo .prettierrc com o seguinte conteúdo:
+
+json
+Copiar código
+{
+  "plugins": ["prettier-plugin-css-order"],
+  "cssOrder": [
+    "display",
+    "position",
+    "top",
+    "right",
+    "bottom",
+    "left",
+    "z-index",
+    "margin",
+    "padding",
+    "width",
+    "height",
+    "max-width",
+    "max-height",
+    "min-width",
+    "min-height",
+    "font",
+    "font-size",
+    "font-weight",
+    "font-family",
+    "line-height",
+    "text-align",
+    "color",
+    "background",
+    "background-color",
+    "background-image",
+    "background-size",
+    "background-position",
+    "border",
+    "border-width",
+    "border-style",
+    "border-color",
+    "border-radius",
+    "box-shadow",
+    "opacity",
+    "transition",
+    "transform",
+    "*"
+  ],
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
+Adicionar Scripts no package.json:
+
+json
+Copiar código
+"scripts": {
+  "lint:css": "stylelint \"**/*.css\" --fix",
+  "format": "prettier --write \"**/*.{css,html,js}\""
+}
+Executar o Stylelint e Prettier:
+
+Para ordenar propriedades CSS:
+
+powershell
+Copiar código
+npm run lint:css
+Para formatar arquivos com Prettier:
+
+powershell
+Copiar código
+npm run format
+5. Dicas Finais
+Integrar com o Editor:
+
+Configure o VSCode para formatar automaticamente ao salvar:
+
+Instalar Extensões:
+
+Stylelint: Procure por "Stylelint" na aba de extensões e instale.
+Prettier: "Prettier - Code formatter".
+Configurar o VSCode (settings.json):
+
+json
+Copiar código
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss", "less"]
+}
+Manter Consistência:
+
+Sempre execute npm run lint:css e npm run format antes de commitar seu código para garantir que está seguindo as regras definidas.

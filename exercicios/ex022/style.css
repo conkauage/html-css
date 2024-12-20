@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+body {
+  height: 100vh;
+  /* Shorthand - background
+        color > image > position > repeat > [size] > attachment
+    */
+  background: black url('imagens/wallpaper003.jpg') center center no-repeat
+    fixed;
+  background-size: cover;
+}
+main {
+  display: none;
+  margin: auto;
+  padding: 10px;
+  max-width: 400px;
+  text-align: center;
+  background-color: white;
+  border: 1px solid green;
+  border-radius: 15px;
+}

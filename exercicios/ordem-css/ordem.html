@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordem dos Parâmetros da CSS</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;   
+            columns: 3;
+            display: inline-block;
+        }
+
+        div {
+            width: 300px;
+            height: 250px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgb(184, 179, 179);
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            background-color: #777373;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            background-color: rgb(154, 154, 204);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: left;
+            list-style-position: inside;
+        }
+
+        li {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>1 - Estilos de layout:</h1>
+        <h2>Propriedades que afetam o posicionamento e o comportamento do elemento no layout da página.</h2>
+        <ul>
+            <li>display</li>
+            <li>position</li>
+            <li>top, right, bottom, left</li>
+            <li>z-index</li>
+            <li>float</li>
+            <li>clear</li>
+        </ul>
+    </div>
+    <div>
+        <h1>2 - Espaçamento:</h1>
+        <h2>Propriedades que afetam o espaço em torno e dentro do elemento.</h2>
+        <ul>
+            <li>margin</li>
+            <li>padding</li>
+        </ul>
+    </div>
+    <div>
+        <h1>3 - Tamanho:</h1>
+        <h2>Propriedades que definem as dimensões do elemento.</h2>
+        <ul>
+            <li>width</li>
+            <li>height</li>
+            <li>max-width</li>
+            <li>max-height</li>
+            <li>min-width</li>
+            <li>min-height</li>
+        </ul>
+    </div>
+    <div>
+        <h1>4 - Estilos visuais:</h1>
+        <h2>Propriedades que definem a aparência do elemento.</h2>
+        <ul>
+            <li>background, background-color, background-image</li>
+            <li>border, border-radius</li>
+            <li>box-shadow</li>
+        </ul>
+    </div>
+    <div>
+        <h1>5 - Texto e fontes:</h1>
+        <h2>Propriedades relacionadas à tipografia.</h2>
+        <ul>
+            <li>color</li>
+            <li>font, font-size, font-weight</li>
+            <li>text-align, text-transform, letter-spacing, line-height</li>
+            <li>white-space, word-wrap</li>
+        </ul>
+    </div>
+    <div>
+        <h1>6 - Outras propriedades específicas do elemento:</h1>
+        <h2>Propriedades que não se encaixam nos grupos acima.</h2>
+        <ul>
+            <li>cursor</li>
+            <li>visibility</li>
+            <li>transition</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
