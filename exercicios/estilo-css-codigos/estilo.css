@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+
+/* Código para eliminar margem pré existente no elementor */
+p {
+    margin-bottom:0 ;
+}
+
+/* Código para eliminar rolagem lateral no elementor */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Código para personalizar barra de rolagem no elementor */
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-track{
+    background: red;
+}
+body::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 20px;
+    border: 3px solid pink;
+}
+
+/* Código para personalizar cor do seletor no elementor */
+*::selection{
+    color: #ffffff;
+    background: red;
+}
+
+/* Código para personalizar cor e estilo dos campos do formulário no elementor */
+selector .elementor-field-option{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    accent-color: red;
+}
+
+/* Código para exibir com delay no elementor, onde está .oculto trocar pela classe desejada */
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+$('.oculto').hide();setTimeout(function() {
+        $('.oculto').show();
+}, 120000);
+</script>
+
+
+/* Código para exibir com delay no elementor, onde está .atrasado trocar pela classe desejada e onde está 360 trocar pelos segundos desejados de delay */
+CÓDIGO DO VTURB
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+var SECONDS_TO_DISPLAY = 360;
+var CLASS_TO_DISPLAY = ".atrasado ";
+var attempts = 0;
+var elsHiddenList = [];
+var elsDisplayed = false;
+var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+var alreadyElsDisplayed = null;
+try {
+    alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+} catch(e) {
+    console.warn('Failed to read data from localStorage: ', e);
+}
+setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
