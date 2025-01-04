@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        body {
+            width: 600px;
+            font-weight: bolder;
+        }
+        p {
+            margin-bottom: 40px;
+        }
+        div#container1 {
+            display: flex;
+            flex-direction: row;
+        }
+        div#container2 {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        div#container3 {
+            display: flex;
+            flex-direction: column;
+        }
+        div#container4 {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        div.item {
+            background-color: lightblue;
+            border: 1px solid black;
+            flex: auto;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p> ROW, MAIN-AXIS DA ESQUERDA PARA A DIREITA<BR>
+        -------------------><BR>
+        CROSS-AXIS DE CIMA PARA BAIXO<br> \/
+        <div id="container1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </p>
+    <p> ROW-REVERSE, MAIN-AXIS DA DIREITA PARA A ESQUERDA<BR>
+        <-------------------<BR>
+        CROSS-AXIS DE CIMA PARA BAIXO<br> \/
+        <div id="container2">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </p>
+    <p> COLUMN, MAIN-AXIS DE CIMA PARA BAIXO<BR>
+        \/<BR>
+        CROSS-AXIS DA ESQUERDA PARA A DIREITA <br>
+        ------------------->
+        <div id="container3">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </p>
+    <p> COLUMN-REVERSE, MAIN-AXIS DE BAIXO PARA CIMA<BR>
+        /\<BR>
+        CROSS-AXIS DA ESQUERDA PARA A DIREITA<BR>
+        ------------------->
+        <div id="container4">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </p>
+</body>
+</html>
