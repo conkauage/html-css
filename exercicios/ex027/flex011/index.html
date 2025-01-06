@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexible Box</title>
     <style>
-        
         div.container {
             background-color: lightsalmon;
             display: flex;
@@ -14,20 +13,29 @@
         div.item {
             background-color: lightblue;
             border: 1px solid black;
-            flex: auto;
-            flex-basis: 150px;
+            text-align: center;
+            flex-basis: 200px;
+        }
+        div#a {
+            flex-grow: 0;
+            flex-shrink: 3;
+        }
+        div#b {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        div#c {
+            flex-grow: 3;
+            flex-shrink: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="item">Aasf</div>
-        <div class="item">Basdfasd asf asdf asd</div>
-        <div class="item">Cassgh sd</div>
-        <div class="item">Dasd asdg asf asd asdasdasd</div>
-        <div class="item">Easf adgf asf adf a</div>
-        <div class="item">Fasd asdfasdf</div>
-        <div class="item">Gasdasfgasfasdf</div>
+        <div id="a" class="item">A</div>
+        <div id="b" class="item">B</div>
+        <div id="c" class="item">C</div>
+        
     </div>
 </body>
 </html>
